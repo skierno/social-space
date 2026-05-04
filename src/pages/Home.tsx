@@ -629,9 +629,10 @@ function Contact() {
               <ul className="space-y-3">
                 {[
                   "Proven track record with 10K+ follower pages",
-                  "Videos reaching 100K to 1M+ views",
+                  "Videos reaching 1M+ views",
                   "Full-service from strategy to execution",
                   "Personalized approach for every client",
+                  "Not just for Social Media, we do photography, design, and websites",
                 ].map((item, i) => (
                   <li key={i} className="flex items-center gap-2 text-white/80 text-sm">
                     <CheckCircle2 size={16} className="text-[#61adc2] shrink-0" />
@@ -766,7 +767,6 @@ function Footer() {
                 { label: "Home", href: "#home" },
                 { label: "Services", href: "#services" },
                 { label: "Packages", href: "#packages" },
-                { label: "Gallery", href: "#gallery" },
                 { label: "Contact", href: "#contact" },
               ].map((link) => (
                 <li key={link.href}>
@@ -843,7 +843,6 @@ export default function Home() {
       <Hero />
       <Services />
       <Packages />
-      <Gallery />
       <Contact />
       <Footer />
     </div>
