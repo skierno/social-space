@@ -573,8 +573,8 @@ function Contact() {
     {
       icon: Mail,
       label: "Email",
-      value: "jsleiman888@gmail.com",
-      href: "mailto:jsleiman888@gmail.com",
+      value: "socialspace.us@gmail.com",
+      href: "mailto:socialspace.us@gmail.com",
     },
     {
       icon: MapPin,
@@ -681,8 +681,8 @@ function Contact() {
                 {status === "error" && (
                   <div className="bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-lg">
                     Something went wrong. Please try again or email us directly at{" "}
-                    <a href="mailto:jsleiman888@gmail.com" className="underline font-medium">
-                      jsleiman888@gmail.com
+                    <a href="mailto:socialspace.us@gmail.com" className="underline font-medium">
+                      socialspace.us@gmail.com
                     </a>
                   </div>
                 )}
