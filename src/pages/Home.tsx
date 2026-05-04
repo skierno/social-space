@@ -177,8 +177,8 @@ function Hero() {
       <div className="absolute top-20 right-0 w-96 h-96 bg-[#61adc2]/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#25567d]/10 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-16 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           {/* Text Content */}
           <motion.div
             initial="hidden"
@@ -186,14 +186,14 @@ function Hero() {
             variants={staggerContainer}
             className="text-center lg:text-left order-2 lg:order-1"
           >
-            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-[#61adc2]/15 text-[#25567d] px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-[#61adc2]/15 text-[#25567d] px-4 py-2 rounded-full text-sm font-medium mb-3 lg:mb-6">
               <Star size={16} fill="#25567d" />
               Full-Service Digital Agency
             </motion.div>
 
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#464646] leading-tight mb-6"
+              className="text-3xl sm:text-5xl lg:text-6xl font-bold text-[#464646] leading-tight mb-3 lg:mb-6"
             >
               Elevate Your{" "}
               <span className="text-[#25567d]">Brand</span> in the{" "}
@@ -202,20 +202,20 @@ function Hero() {
 
             <motion.p
               variants={fadeInUp}
-              className="text-lg text-[#464646]/80 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+              className="text-base lg:text-lg text-[#464646]/80 mb-4 lg:mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
             >
               We help businesses grow through powerful social media marketing, stunning photography,
               professional design, and custom websites. We don't just do Social Media. Need pictures for an event? We got you covered.
             </motion.p>
 
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6 lg:mb-12">
               <a
                 href="#contact"
                 onClick={(e) => {
                   e.preventDefault();
                   document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="bg-[#25567d] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#1e4566] transition-all inline-flex items-center justify-center gap-2 shadow-lg shadow-[#25567d]/25"
+                className="bg-[#25567d] text-white px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold hover:bg-[#1e4566] transition-all inline-flex items-center justify-center gap-2 shadow-lg shadow-[#25567d]/25"
               >
                 Start Your Project <ArrowRight size={18} />
               </a>
@@ -225,7 +225,7 @@ function Hero() {
                   e.preventDefault();
                   document.querySelector("#services")?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="border-2 border-[#25567d] text-[#25567d] px-8 py-4 rounded-full font-semibold hover:bg-[#25567d] hover:text-white transition-all inline-flex items-center justify-center"
+                className="border-2 border-[#25567d] text-[#25567d] px-6 py-3 lg:px-8 lg:py-4 rounded-full font-semibold hover:bg-[#25567d] hover:text-white transition-all inline-flex items-center justify-center"
               >
                 Our Services
               </a>
@@ -260,7 +260,7 @@ function Hero() {
               <img
                 src="/logo.png"
                 alt="Social Space"
-                className="relative w-full max-w-md h-auto drop-shadow-2xl"
+                className="relative w-full max-w-[220px] lg:max-w-md h-auto drop-shadow-2xl"
               />
             </div>
           </motion.div>
