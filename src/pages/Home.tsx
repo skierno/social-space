@@ -541,16 +541,28 @@ function Packages() {
    ============================================= */
 function Contact() {
   const [formState, setFormState] = useState({ name: "", email: "", service: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, connect this to your backend or email service
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormState({ name: "", email: "", service: "", message: "" });
-    }, 3000);
+    const endpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+    if (!endpoint) { setStatus("error"); return; }
+    setStatus("loading");
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formState),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setFormState({ name: "", email: "", service: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const contactInfo = [
@@ -651,17 +663,31 @@ function Contact() {
             transition={{ duration: 0.5 }}
             className="bg-white rounded-2xl p-8 shadow-2xl"
           >
-            {submitted ? (
+            {status === "success" ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-12">
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-green-600 mb-4">
                   <CheckCircle2 size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-[#464646] mb-2">Message Sent!</h3>
                 <p className="text-[#464646]/70">We'll get back to you within 24 hours.</p>
+                <button
+                  onClick={() => setStatus("idle")}
+                  className="mt-6 text-sm text-[#25567d] hover:underline"
+                >
+                  Send another message
+                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
                 <h3 className="text-xl font-bold text-[#464646] mb-2">Send a Message</h3>
+                {status === "error" && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-lg">
+                    Something went wrong. Please try again or email us directly at{" "}
+                    <a href="mailto:jsleiman888@gmail.com" className="underline font-medium">
+                      jsleiman888@gmail.com
+                    </a>
+                  </div>
+                )}
                 <div>
                   <label className="block text-sm font-medium text-[#464646] mb-1">Your Name</label>
                   <input
@@ -711,9 +737,20 @@ function Contact() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-[#25567d] text-white py-4 rounded-lg font-semibold hover:bg-[#1e4566] transition-colors flex items-center justify-center gap-2"
+                  disabled={status === "loading"}
+                  className="w-full bg-[#25567d] text-white py-4 rounded-lg font-semibold hover:bg-[#1e4566] transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Message <ArrowRight size={18} />
+                  {status === "loading" ? (
+                    <>
+                      <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    <>Send Message <ArrowRight size={18} /></>
+                  )}
                 </button>
                 <p className="text-xs text-[#464646]/50 text-center">
                   You can also reach us directly at{" "}
