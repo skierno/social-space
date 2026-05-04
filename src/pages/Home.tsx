@@ -756,8 +756,8 @@ function Contact() {
                     331-203-4179
                   </a>{" "}
                   or{" "}
-                  <a href="mailto:jsleiman888@gmail.com" className="text-[#25567d] hover:underline">
-                    jsleiman888@gmail.com
+                  <a href="mailto:socialspace.us@gmail.com" className="text-[#25567d] hover:underline">
+                    socialspace.us@gmail.com
                   </a>
                 </p>
               </form>
