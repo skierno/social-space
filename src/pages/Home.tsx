@@ -23,8 +23,6 @@ import {
   ChevronDown,
   MessageSquare,
   BarChart3,
-  Megaphone,
-  Image,
 } from "lucide-react";
 
 /* =============================================
