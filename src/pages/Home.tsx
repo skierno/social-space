@@ -88,7 +88,7 @@ function Navbar() {
           {/* Logo */}
           <a href="#home" onClick={() => scrollTo("#home")} className="flex items-center gap-3">
             <img src="/logo.png" alt="Social Space Logo" className="h-12 w-auto" />
-            <span className="text-xl font-bold text-[#25567d] hidden sm:inline">Social Space</span>
+            <span className="text-xl font-bold text-[#25567d]">Social Space</span>
           </a>
 
           {/* Desktop Nav */}
