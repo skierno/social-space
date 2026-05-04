@@ -122,27 +122,32 @@ function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden bg-white border-t border-gray-100 shadow-lg ${isOpen ? "block" : "hidden"}`}>
-        <div className="px-4 py-4 flex flex-col gap-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => { e.preventDefault(); scrollTo(link.href); }}
-              className="block text-[#464646] hover:text-[#25567d] font-medium py-3 px-2 rounded-lg active:bg-gray-50 transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#contact"
-            onClick={(e) => { e.preventDefault(); scrollTo("#contact"); }}
-            className="block text-center bg-[#25567d] text-white px-5 py-3 rounded-full font-medium hover:bg-[#1e4566] transition-colors mt-2"
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
           >
-            Get Started
-          </a>
-        </div>
-      </div>
+            <div className="px-4 py-4 flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollTo(link.href)}
+                  className="text-left text-[#464646] hover:text-[#25567d] font-medium py-2 transition-colors"
+                >
+                  {link.label}
+                </button>
+              ))}
+              <button
+                onClick={() => scrollTo("#contact")}
+                className="bg-[#25567d] text-white px-5 py-3 rounded-full font-medium hover:bg-[#1e4566] transition-colors mt-2"
+              >
+                Get Started
+              </button>
+            </div>
+          </motion.div>
+        )}
     </nav>
   );
 }
