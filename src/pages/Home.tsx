@@ -581,7 +581,7 @@ function Contact() {
     {
       icon: MapPin,
       label: "Service Area",
-      value: "Available Nationwide",
+      value: "Chicagoland Area",
       href: "#",
     },
   ];
