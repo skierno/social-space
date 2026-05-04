@@ -123,9 +123,3 @@ function Gallery() {
 }
 
 
-{ label: "Gallery", href: "#gallery" },
-
-{ label: "Gallery", href: "#gallery" },
-
-
-<Gallery />
