@@ -184,7 +184,7 @@ function Hero() {
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="text-center lg:text-left"
+            className="text-center lg:text-left order-2 lg:order-1"
           >
             <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 bg-[#61adc2]/15 text-[#25567d] px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Star size={16} fill="#25567d" />
@@ -253,7 +253,7 @@ function Hero() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex items-center justify-center"
+            className="flex items-center justify-center order-1 lg:order-2"
           >
             <div className="relative">
               <div className="absolute inset-0 bg-[#61adc2]/20 rounded-full blur-3xl scale-110" />
