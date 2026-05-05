@@ -5,7 +5,6 @@ import {
   X,
   Instagram,
   Facebook,
-  Video,
   Camera,
   Palette,
   Globe,
