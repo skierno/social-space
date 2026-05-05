@@ -783,7 +783,7 @@ function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <img src="/logo.png" alt="Social Space" className="h-10 w-auto invert brightness-200" />
+              <img src="/logo.png" alt="Social Space" className="h-10 w-auto" />
               <span className="text-xl font-bold">Social Space</span>
             </div>
             <p className="text-white/60 max-w-sm leading-relaxed">
@@ -833,7 +833,7 @@ function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/socialspace.us"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/40 hover:text-[#61adc2] transition-colors"
@@ -842,22 +842,13 @@ function Footer() {
               <Instagram size={20} />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/profile.php?id=61589301147463"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/40 hover:text-[#61adc2] transition-colors"
               aria-label="Facebook"
             >
               <Facebook size={20} />
-            </a>
-            <a
-              href="https://tiktok.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/40 hover:text-[#61adc2] transition-colors"
-              aria-label="TikTok"
-            >
-              <Video size={20} />
             </a>
           </div>
         </div>
