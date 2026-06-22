@@ -251,12 +251,12 @@ function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex items-center justify-center"
           >
-            <div className="relative">
+            <div className="relative flex items-center justify-center">
               <div className="absolute inset-0 bg-[#2563eb]/20 rounded-full blur-3xl scale-110" />
               <img
-                src="/logo.png"
+                src="/logo-full.png"
                 alt="Social Space"
-                className="relative w-full max-w-[220px] lg:max-w-md h-auto drop-shadow-2xl"
+                className="relative w-full max-w-[260px] lg:max-w-[420px] h-auto rounded-2xl"
               />
             </div>
           </motion.div>
