@@ -87,7 +87,7 @@ function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#home" onClick={() => scrollTo("#home")} className="flex items-center gap-3">
-            <img src="/logo-full.png" alt="Social Space Logo" className="h-11 w-11 rounded-full object-cover object-center" />
+            <img src="/logo-full.png" alt="Social Space Logo" className="h-14 w-14 rounded-full object-cover object-center" />
             <span className="text-xl font-bold text-white">Social Space</span>
           </a>
 
